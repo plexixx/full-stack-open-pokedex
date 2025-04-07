@@ -9,7 +9,7 @@
     "test": "jest",
     "test:e2e": "set NODE_OPTIONS=--openssl-legacy-provider && playwright test",
     "eslint": "eslint './**/*.{js,jsx}'",
-    "build": "webpack --mode production"
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && webpack --mode production"
   },
   "jest": {
     "testEnvironment": "jsdom",
