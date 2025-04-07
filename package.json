@@ -6,6 +6,7 @@
   "scripts": {
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server --open --mode development",
     "start-prod": "node app.js",
+    "test": "jest",
     "test:e2e": "set NODE_OPTIONS=--openssl-legacy-provider && playwright test",
     "eslint": "eslint './**/*.{js,jsx}'",
     "build": "webpack --mode production"
