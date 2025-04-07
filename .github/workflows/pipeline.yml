@@ -35,8 +35,8 @@ jobs:
     environment: prod
     steps:
       - name: Trigger deployment
-        uses: sws2apps/render-deployment@main
+        uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          serviceId: ${{ secrets.RENDER_SERVICE_ID }}
-          apiKey: ${{ secrets.RENDER_API_KEY }}
-          multipleDeployment: false #optional, default true
+          service-id: ${{ secrets.RENDER_SERVICE_ID }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
+          wait-for-success: true
