@@ -35,8 +35,10 @@ jobs:
     environment: prod
     steps:
       - name: Trigger deployment
-        uses: johnbeynon/render-deploy-action@v0.0.8
+        uses: bounceapp/render-action@0.8.0
         with:
-          service-id: ${{ secrets.RENDER_SERVICE_ID }}
-          api-key: ${{ secrets.RENDER_API_KEY }}
-          wait-for-success: true
+          render-token: ${{ secrets.RENDER_API_KEY }}
+          service-id: srv-${{ secrets.RENDER_SERVICE_ID }}
+          retries: 5
+          wait: 16000
+          sleep: 30000
