@@ -4,6 +4,5 @@
     "test": {
       "plugins": ["@babel/plugin-transform-runtime"]
     }
-  },
-  "extensions": [".js", ".jsx", ".ts", ".tsx"]
+  }
 }
