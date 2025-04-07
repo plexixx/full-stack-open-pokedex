@@ -32,6 +32,7 @@ jobs:
   trigger_deployment:
     name: Trigger deployment to Render
     runs-on: ubuntu-20.04
+    environment: prod
     steps:
       - name: Trigger deployment
         uses: sws2apps/render-deployment@main
