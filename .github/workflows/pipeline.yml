@@ -54,7 +54,7 @@ jobs:
         with:
             severity: error
             details: Deploy Failed!
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }} 
 
 
   tag_release:
