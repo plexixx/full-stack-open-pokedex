@@ -41,6 +41,21 @@ jobs:
     steps:
       - name: Trigger deployment
         run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
+      - name: Deploy Success
+        uses: rjstone/discord-webhook-notify@v1
+        if: ${{ success() }}
+        with:
+            severity: info
+            text: A new version of ${{ github.repository }} deployed
+            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Deploy Failure
+        uses: rjstone/discord-webhook-notify@v1
+        if: ${{ failure() }}
+        with:
+            severity: error
+            details: Deploy Failed!
+            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
 
   tag_release:
     needs: [simple_deployment_pipeline]
